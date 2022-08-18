@@ -4,7 +4,6 @@ import prettier from 'prettier';
 import parser from 'prettier/parser-babel';
 import { useRef } from 'react';
 
-
 interface CodeEditorProps {
   initialValue: string;
   onChange(value: string): void;
@@ -20,8 +19,6 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     });
 
     monacoEditor.getModel()?.updateOptions({ tabSize: 2 });
-
-
   };
 
   const onFormatClick = () => {
@@ -49,7 +46,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}
-        height={'500px'}
+        height={'100%'}
         language={'javascript'}
         theme={'dark'}
         options={{
